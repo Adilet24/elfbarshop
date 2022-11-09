@@ -1,0 +1,21 @@
+body{
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  background: #eee;
+}
+
+h3{
+  font-size: 25px;
+  text-align: center;
+  margin: 0;
+}
+
+p{
+  font-size: 16px;
+  text-align: justify;
+  padding: 0 20px 5px 20px;
+}

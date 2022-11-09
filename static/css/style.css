@@ -1,0 +1,97 @@
+body{
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background: #eee;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid #e7e7e7;
+}
+
+li.left {
+  float: left;
+}
+
+li a img{
+  width: 250px;
+  padding: 0 !important;
+}
+
+li.left.catalog a{
+  display: block;
+  color: #666;
+  text-align: center;
+  font-size: 1.2rem;
+  padding: 21px 24px;
+  text-decoration: none;
+}
+
+li.right {
+  float: right;
+}
+
+li.right a {
+  display: block;
+  color: #666;
+  text-align: center;
+  font-size: 1.2rem;
+  padding: 21px 24px;
+  text-decoration: none;
+}
+
+li.left div.cart-btn i{
+  display: block;
+  text-align: center;
+  text-decoration: none;
+}
+
+li.left a img{
+  display: block;
+  color: #666;
+  text-align: center;
+  padding: 0 0 !important;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #ddd;
+}
+
+.field {
+  display: flex;
+  border-bottom: 2px solid #eee;
+  margin-bottom: 25px;
+}
+
+.field p{
+  font-size: 1.2em;
+}
+
+.cart-btn {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+}
+
+#cart {
+  position: relative;
+  font-size: 2rem;
+  cursor: pointer;
+  margin: 1em 4em 0 0;
+}
+
+.cart-quantity {
+  color: white;
+  background-color: red;
+  position: absolute;
+  margin: .8em 7.5em 0 0;
+  right: 0;
+  border: solid 2px red;
+  border-radius: 15px;
+  font-weight: bolder;
+}
