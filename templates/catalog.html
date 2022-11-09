@@ -1,0 +1,50 @@
+{% extends "template_main.html" %}
+{% block link %}
+<link rel="stylesheet" href="{{url_for('static', filename='css/catalog.css')}}">
+<link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+{% endblock %}
+{% block content %}
+<div class="cart-modal-overlay">
+    <div class="cart-modal">
+      <i id="close-btn" class="fas fa-times"></i>
+        <h1 class="cart-is-empty">Cart is empty</h1>
+
+        <div class="product-rows">
+        </div>
+        <div class="total">
+          <h1 class="cart-total">TOTAL</h1>
+            <span class="total-price">&#8376;0</span>
+              <button class="purchase-btn">PURCHASE</button>
+        </div>
+      </div>
+</div>
+<div class="items">
+{% if items %}
+{% for item in items %}
+<div class="card">
+  <div class="imgBox">
+    <img src="{{item.img}}" alt="ElfBar image" class="mouse">
+  </div>
+
+  <div class="contentBox">
+    <h3 class="title">{{item.title}}</h3>
+    <h2 class="price">&#8376;{{item.price}}</h2>
+    <button class="add-to-cart">Добавить в коризину</button>
+    <form action="/update_item" method="post">
+      <input type=hidden value="{{ item.id }}" name="update_id">
+      <input type="submit" value="UPDATE">
+    </form>
+    <form action="/delete_item" method="post">
+      <input type=hidden value="{{ item.id }}" name="delete_id">
+      <input type="submit" value="DELETE">
+    </form>
+  </div>
+</div>
+{% endfor %}
+{% endif %}
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<!-- partial -->
+<script  src="{{url_for('static', filename='js/catalog.js')}}"></script>
+{% endblock %}

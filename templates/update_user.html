@@ -1,0 +1,15 @@
+{% extends "template_main.html" %}
+
+{% block content %}
+<form action="/update_user" method="post">
+  <div class="field">
+    <p>Full Name:</p>
+    <input type="text" placeholder="full name" name="full_name" value="{{full_name}}" required>
+  </div>
+  <div class="field">
+    <p>Email:</p>
+    <input type="Email" placeholder="email" name="email" value="{{log}}" required>
+  </div>
+  <input class="submit-btn" type="Submit" value="UPDATE">
+</form>
+{% endblock %}

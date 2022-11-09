@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+    {% block link %}
+    {% endblock %}
+</head>
+
+<body>
+    <section>
+
+        <div>
+            <ul>
+                <li class="left"><a href="/">
+                    <img src="{{url_for('static', filename='logo/vapelid_logo.png')}}" alt="logo">
+                </a></li>
+                <li class="left catalog">
+                    <a href="/catalog">Каталог</a>
+                </li>
+                <li class="left">
+                    <div class="cart-btn">
+                        <i id="cart" class="uil uil-shopping-cart-alt"></i>
+                        <span class ="cart-quantity">0</span>
+                    </div>
+                </li>
+                {% if log != 'Login' %}
+                <li class="right"><a href="/logout">Logout</a></li>
+                {% endif %}
+                <li class="right"><a href="/{{url}}">{{log}}</a></li>
+                {% if roll == 'admin' %}
+                <li class="right"><a href="/add_item">Add Item</a></li>
+                {% endif %}
+            </ul>
+        </div>
+
+        <div class="hero-body">
+            <div class="container has-text-centered">
+               {% block content %}
+               {% endblock %}
+            </div>
+        </div>
+    </section>
+
+    <script>
+
+    </script>
+</body>
+
+</html>

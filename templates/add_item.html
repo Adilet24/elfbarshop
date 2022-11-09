@@ -1,0 +1,30 @@
+{% extends "template_main.html" %}
+{% block link %}
+{% endblock %}
+{% block content %}
+<h2>{{title_page}}</h2>
+<form action="/{{action}}" method="post">
+  <div class="field">
+    <p>Title:</p>
+    <input type="text" placeholder="Title" name="title" value="{{title}}" required>
+  </div>
+  <div class="field">
+    <p>Content:</p>
+    <input type="text" placeholder="Content" name="content" value="{{content}}" required>
+  </div>
+  <div class="field">
+    <p>Price:</p>
+    <input type="number" placeholder="Price" name="price" value="{{price}}" required>
+  </div>
+  <div class="field">
+    <p>Url for image:</p>
+    <input type="url" placeholder="Image" name="image" value="{{image}}" required>
+    <input type=hidden value="{{ id }}" name="update_id">
+  </div>
+  <div class="field">
+    <p>Category:</p>
+    <input type="text" placeholder="Category" name="category" value="{{category}}" required>
+  </div>
+  <input class="submit-btn" type="Submit" value="{{button}}">
+</form>
+{% endblock %}
